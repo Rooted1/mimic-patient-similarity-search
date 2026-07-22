@@ -7,7 +7,7 @@
 ![MIMIC-IV](https://img.shields.io/badge/Dataset-MIMIC--IV-green)
 ![License](https://img.shields.io/badge/License-MIT-blue)
 
-AN emd-to-end machine learning pipeline for retrieving clinically similar ICU patients using structured electronic health record (EHR) sata from the MIMIC-IV database. The project includes feature engineering, preprocessing, K-Nearest Neighbors (KNN) similarity search, and PCA visualization.
+An end-to-end machine learning pipeline for retrieving clinically similar ICU patients using structured electronic health record (EHR) sata from the MIMIC-IV database. The project includes feature engineering, preprocessing, K-Nearest Neighbors (KNN) similarity search, and PCA visualization.
 
 ## Overview
 
@@ -104,7 +104,7 @@ Vital signs included:
 - Oxygen Stauration (SpO2)
 - Temperature
 
-THe final version 1 feature set contains **37 engineered patient features** before categorical encoding.
+The final version 1 feature set contains **37 engineered patient features** before categorical encoding.
 
 ## Machine Learning
 
@@ -191,22 +191,30 @@ macOS/Linux
 ```source venv/bin/activate```
 Windows
 ```venv\Scripts\activate```
+
 3. Install dependencies
 ```pip install -r reqiurements.txt```
+
 4. Obtain the MIMIC-IV dataset
+
 This project uses the MIMIC_IV clinical database.
+
 To access the data:
+
     1. Complete the required training and data use agreement through PhysioNet.
     2. Download the required MIMIC-IV tables.
     3. Place the raw files in the data/raw/ directory.
 
 5. Run the notebooks
+
 Execute the notebooks in order:
+
     1. 01_build_patient_base.ipynb
     2. 02_add_diagnoses.ipynb
     3. 03_extract_vitals_duckdb.ipynb
     4. 04_add_vitals_labs.ipynb
     5. 05_similarity_search.ipynb
+
 Each notebook builds upon the outputs of the previous notebook.
 
 ## Configuration
@@ -229,7 +237,7 @@ Planned improvements for Version 2 include:
 
 ## Clinical Considerations
 
-This project is intended for educationl and research purposes.
+This project is intended for educational and research purposes.
 
 Patient similarity should not be interpreted as a clinical recommendation or decision-support tool. Similarity is computed from structured demographic, diagnosis, and vital-sign features and does not incorporate the full clinical context available to healthcare professionals, including physician notes, imaging, nedicationis, laboratory trends, or treatment history.
 
